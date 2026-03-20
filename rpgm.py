@@ -104,7 +104,12 @@ def grafik(tip):
     plt.bar(x,y)
     plt.title(f"{tip.upper()} GRAFİK")
     plt.xticks(rotation=45)
-    plt.show()
+    plt.tight_layout()
+
+    dosya = f"{tip}_grafik.png"
+    plt.savefig(dosya)
+    plt.close()
+    print(f"📊 {tip} grafiği kaydedildi: {dosya}")
 
 # --------------- CHALLENGE ----------------
 def challenge():
@@ -125,14 +130,10 @@ def menu():
     task = None
     while True:
         print("\n=== HAYAT ===")
-        print("1 görev al")
-        print("2 tamamla")
-        print("3 durum")
-        print("4 zorluk")
-        print("5 günlük grafik")
-        print("6 haftalık grafik")
-        print("7 aylık grafik")
-        print("8 challenge")
+        print("1 görev al           2 tamamla")
+        print("3 durum              4 zorluk")
+        print("5 günlük grafik      6 haftalık grafik")
+        print("7 aylık grafik       8 challenge")
         print("9 çık")
 
         s = input(">> ")
